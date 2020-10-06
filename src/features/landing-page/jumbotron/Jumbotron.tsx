@@ -7,10 +7,10 @@ import {
   SubTitle,
   Image,
   Item,
-} from "./styles/jumbotron-section";
-import jumboData from "../../fixtures/jumbo.json";
+} from "./styles/jumbotron";
+import jumboData from "../../../fixtures/jumbo.json";
 
-export default function JumbotronSection() {
+export default function Jumbotron() {
   return (
     <Container>
       {jumboData.map((item, index) => (

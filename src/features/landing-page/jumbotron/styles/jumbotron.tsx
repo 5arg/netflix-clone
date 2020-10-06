@@ -4,11 +4,6 @@ type StyledInnerPropsType = {
   direction: string;
 };
 
-type StyledImagePropsType = {
-  src: string;
-  alt: string;
-};
-
 export const Container = styled.div``;
 
 export const Pane = styled.div`
@@ -18,6 +13,14 @@ export const Pane = styled.div`
     padding: 0 45px;
     text-align: center;
   }
+`;
+
+export const Item = styled.div`
+  display: flex;
+  border-bottom: 8px solid #222;
+  padding: 50px 5%;
+  color: white;
+  overflow: hidden;
 `;
 
 export const Inner = styled.div`
@@ -51,16 +54,7 @@ export const SubTitle = styled.h2`
   }
 `;
 
-export const Item = styled.div`
-  display: flex;
-  border-bottom: 8px solid #222;
-  padding: 50px 5%;
-  color: white;
-  overflow: hidden;
-`;
-
 export const Image = styled.img`
-max-width:100%;
-height:auto;
-src: ${({ src }: StyledImagePropsType) => src}};
-alt: ${({ alt }: StyledImagePropsType) => alt}}`;
+  max-width: 100%;
+  height: auto;
+`;

@@ -1,12 +1,12 @@
 import React from "react";
-import Jumbotron from "./components/jumbotron-section/index";
 import { GlobalStyles } from "./global-styles";
+import LandingPage from "./features/landing-page/LandingPage";
 
 export default function App() {
   return (
     <>
       <GlobalStyles />
-      <Jumbotron />
+      <LandingPage />
     </>
   );
 }
