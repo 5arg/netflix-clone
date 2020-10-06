@@ -1,6 +1,12 @@
 import React from "react";
-import Jumbotron from "./jumbotron/Jumbotron";
+import Footer from "./footer/Footer";
+import JumbotronContainer from "./jumbotron/JumbotronContainer";
 
 export default function LandingPage() {
-  return <Jumbotron />;
+  return (
+    <>
+      <JumbotronContainer />
+      <Footer />
+    </>
+  );
 }
