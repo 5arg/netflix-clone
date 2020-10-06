@@ -2,7 +2,6 @@ import React from "react";
 import { Inner, Pane, Title, SubTitle, Image, Item } from "./styles/jumbotron";
 
 type JumbotronPropsType = {
-  index: number;
   item: {
     direction: string;
     title: string;
@@ -12,9 +11,9 @@ type JumbotronPropsType = {
   };
 };
 
-export default function Jumbotron({ index, item }: JumbotronPropsType) {
+export default function Jumbotron({ item }: JumbotronPropsType) {
   return (
-    <Item key={index}>
+    <Item>
       <Inner direction={item.direction}>
         <Pane>
           <Title>{item.title}</Title>

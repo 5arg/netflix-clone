@@ -7,7 +7,7 @@ export default function JumbotronContainer() {
   return (
     <Container>
       {jumboData.map((item, index) => (
-        <Jumbotron index={index} item={item} />
+        <Jumbotron key={index} item={item} />
       ))}
     </Container>
   );
