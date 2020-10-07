@@ -1,13 +1,26 @@
 import React from "react";
-import { GlobalStyles } from "./global-styles";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "normalize.css";
-import LandingPage from "./pages/landing/LandingPage";
+import { Landing, Browse, SignIn, SignUp } from "./pages";
+import * as ROUTES from "./constants/routes";
 
 export default function App() {
   return (
-    <>
-      <GlobalStyles />
-      <LandingPage />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path={ROUTES.HOME}>
+          <Landing />
+        </Route>
+        <Route exact path={ROUTES.BROWSE}>
+          <Browse />
+        </Route>
+        <Route exact path={ROUTES.SIGN_IN}>
+          <SignIn />
+        </Route>
+        <Route exact path={ROUTES.SIGN_UP}>
+          <SignUp />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
