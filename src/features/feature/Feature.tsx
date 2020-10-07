@@ -1,5 +1,4 @@
 import React from "react";
-import OptForm from "../opt-form/OptForm";
 import { Container, Title, SubTitle } from "./styles/feature";
 
 type FeaturePropsType = {

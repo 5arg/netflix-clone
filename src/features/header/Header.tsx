@@ -10,7 +10,7 @@ export default function Header({ hasBackground = true }) {
     <Background dontShowOnSmallViewPort={true}>
       <Container>
         <Logo src={logo} alt="Netflix" />
-        <ButtonLink to={ROUTES.HOME}>Sign In</ButtonLink>
+        <ButtonLink to={ROUTES.SIGN_IN}>Sign In</ButtonLink>
       </Container>
       <Feature
         title="Unlimited movies, TV shows, and more."
