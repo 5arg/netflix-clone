@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Container, Inner, Title } from "./styles/faq";
-import faqData from "../../../fixtures/faq.json";
+import faqData from "../../fixtures/faq.json";
 import FAQ from "./FAQ";
+import OptForm from "../opt-form/OptForm";
 
 export default function FAQContainer() {
   const [toggledID, setToggledID] = useState<number | null>();
@@ -17,6 +18,7 @@ export default function FAQContainer() {
             toggled={item.id === toggledID}
           />
         ))}
+        <OptForm />
       </Inner>
     </Container>
   );

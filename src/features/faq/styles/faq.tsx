@@ -10,6 +10,7 @@ export const Frame = styled.div`
 `;
 
 export const Inner = styled.div`
+  align-items: center;
   display: flex;
   padding: 70px 45px;
   flex-direction: column;
