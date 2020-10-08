@@ -1,29 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
 import { Landing, Browse, SignIn, SignUp } from "./pages";
-import { FirebaseProvider } from "./context/Firebase";
 import "normalize.css";
+import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
+import useAuthListener from "./hooks/useAuthListener";
 
 export default function App() {
+  const user = useAuthListener().user;
   return (
-    <FirebaseProvider>
-      <Router>
-        <Switch>
-          <Route exact path={ROUTES.HOME}>
-            <Landing />
-          </Route>
-          <Route exact path={ROUTES.BROWSE}>
-            <Browse />
-          </Route>
-          <Route exact path={ROUTES.SIGN_IN}>
-            <SignIn />
-          </Route>
-          <Route exact path={ROUTES.SIGN_UP}>
-            <SignUp />
-          </Route>
-        </Switch>
-      </Router>
-    </FirebaseProvider>
+    <Router>
+      <Switch>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_IN}
+        >
+          <SignIn />
+        </IsUserRedirect>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_UP}
+        >
+          <SignUp />
+        </IsUserRedirect>
+        <ProtectedRoute user={user} path={ROUTES.BROWSE}>
+          <Browse />
+        </ProtectedRoute>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.HOME}
+        >
+          <Landing />
+        </IsUserRedirect>
+      </Switch>
+    </Router>
   );
 }

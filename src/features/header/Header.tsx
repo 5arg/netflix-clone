@@ -15,7 +15,7 @@ export default function Header({
 }: HeaderPropsType): ReactElement {
   const location = useLocation();
   return hasBackground ? (
-    <Background dontShowOnSmallViewPort={true}>
+    <Background dontShowOnSmallViewPort={false}>
       <Container>
         <Logo src={logo} alt="Netflix" />
         {location.pathname === ROUTES.HOME && (

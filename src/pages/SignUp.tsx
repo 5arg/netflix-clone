@@ -3,7 +3,7 @@ import Footer from "../features/footer/Footer";
 import Form from "../features/form/Form";
 import Header from "../features/header/Header";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <>
       <Header>
