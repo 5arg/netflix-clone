@@ -29,7 +29,7 @@ export default function Browse() {
             <Loading src={selectedProfile.profile.photoURL} />
           </Header>
         ) : (
-          <Header src="joker1">
+          <Header src="joker1" user={selectedProfile}>
             <p>slides</p>
           </Header>
         )
