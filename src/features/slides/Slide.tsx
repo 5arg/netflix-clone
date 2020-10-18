@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Slides() {
-  return <div></div>;
+  return <div>slids sses</div>;
 }

@@ -101,6 +101,10 @@ export const SearchIcon = styled.button`
     filter: brightness(0) invert(1);
     width: 16px;
   }
+  &:focus {
+    outline: none;
+    height: 60px;
+  }
 `;
 
 export const ButtonLink = styled(ReactRouterLink)`

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../features/header/Header";
 import Loading from "../features/loading/Loading";
 import ProfilesContainer from "../features/profiles/ProfilesContainer";
+import SlidesContainer from "../features/slides/SlidesContainer";
 
 export type ProfileType = {
   profile: {
@@ -30,7 +31,7 @@ export default function Browse() {
           </Header>
         ) : (
           <Header src="joker1" user={selectedProfile}>
-            <p>slides</p>
+            <SlidesContainer />
           </Header>
         )
       ) : (
