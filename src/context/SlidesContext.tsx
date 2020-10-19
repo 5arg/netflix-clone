@@ -22,7 +22,7 @@ const SlidesProvider = ({ children }: SlidesProviderTypeProps) => {
   });
 
   function setSlidesType(slidesType: "series" | "films") {
-    setState((old) => ({ ...old, slidesType }));
+    setState((old) => ({ ...old, slidesType, featuredSlide: null }));
   }
 
   function setFeaturedSlide(featuredSlide: any | null) {

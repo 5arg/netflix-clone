@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SlidesProvider } from "../context/SlidesContext";
+import Footer from "../features/footer/Footer";
 import Header from "../features/header/Header";
 import Loading from "../features/loading/Loading";
 import ProfilesContainer from "../features/profiles/ProfilesContainer";
@@ -34,6 +35,7 @@ export default function Browse() {
           <SlidesProvider>
             <Header src="joker1" user={selectedProfile} />
             <SlidesContainer />
+            <Footer />
           </SlidesProvider>
         )
       ) : (

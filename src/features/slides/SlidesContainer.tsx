@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSlides } from "../../context/SlidesContext";
 import useContent from "../../hooks/useContent";
 import selectionFilter from "../../utils/selectionFilter";
+import Player from "../player/Player";
 import Slide from "./Slide";
 import {
   Group,
@@ -17,6 +18,7 @@ import {
 } from "./styles/slide";
 
 export default function SlidesContainer() {
+  const [showPlayer, setShowPlayer] = useState<boolean>(false);
   const { slidesType, setFeaturedSlide, featuredSlide } = useSlides();
   const { series } = useContent("series");
   const { films } = useContent("films");
@@ -29,7 +31,7 @@ export default function SlidesContainer() {
           <Title>{slideItem.title}</Title>
           <Entities>
             {slideItem.data.map((item: any) => (
-              <Slide item={item} />
+              <Slide item={item} key={item.title} />
             ))}
           </Entities>
 
@@ -46,16 +48,23 @@ export default function SlidesContainer() {
                 <FeatureClose onClick={() => setFeaturedSlide(null)}>
                   <img src="/images/icons/close.png" alt="Close" />
                 </FeatureClose>
+                <Group margin="30px 0" flexDirection="row" alignItems="center">
+                  <Maturity rating={featuredSlide.maturity}>
+                    {featuredSlide.maturity < 12
+                      ? "PG"
+                      : featuredSlide.maturity}
+                  </Maturity>
+                  <FeatureText fontWeight="bold">
+                    {featuredSlide.genre.charAt(0).toUpperCase() +
+                      featuredSlide.genre.slice(1)}
+                  </FeatureText>
+                </Group>
+                <Player
+                  showPlayer={showPlayer}
+                  setShowPlayer={setShowPlayer}
+                  src="videos/bunny.mp4"
+                />
               </Content>
-              <Group margin="30px 0" flexDirection="row" alignItems="center">
-                <Maturity rating={featuredSlide.maturity}>
-                  {featuredSlide.maturity < 12 ? "PG" : featuredSlide.maturity}
-                </Maturity>
-                <FeatureText fontWeight="bold">
-                  {featuredSlide.genre.charAt(0).toUpperCase() +
-                    featuredSlide.genre.slice(1)}
-                </FeatureText>
-              </Group>
             </Feature>
           ) : null}
         </Container>
