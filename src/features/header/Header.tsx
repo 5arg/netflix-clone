@@ -4,7 +4,6 @@ import { Background, Logo, Container, ButtonLink } from "./styles/header";
 import * as ROUTES from "../../constants/routes";
 import logo from "../../logo.svg";
 import { ProfileType } from "../../pages/Browse";
-import { SlidesProvider } from "../../context/SlidesContext";
 import BrowseHeader from "./BrowseHeader";
 
 type HeaderPropsType = {
@@ -34,9 +33,7 @@ export default function Header({
         </Container>
       )}
       {location.pathname === ROUTES.BROWSE && (
-        <SlidesProvider>
-          <BrowseHeader user={user} children={children} />
-        </SlidesProvider>
+        <BrowseHeader user={user} children={children} />
       )}
     </Background>
   ) : (

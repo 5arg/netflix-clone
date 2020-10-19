@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SlidesProvider } from "../context/SlidesContext";
 import Header from "../features/header/Header";
 import Loading from "../features/loading/Loading";
 import ProfilesContainer from "../features/profiles/ProfilesContainer";
@@ -30,9 +31,10 @@ export default function Browse() {
             <Loading src={selectedProfile.profile.photoURL} />
           </Header>
         ) : (
-          <Header src="joker1" user={selectedProfile}>
+          <SlidesProvider>
+            <Header src="joker1" user={selectedProfile} />
             <SlidesContainer />
-          </Header>
+          </SlidesProvider>
         )
       ) : (
         <Header hasBackground={false}>
