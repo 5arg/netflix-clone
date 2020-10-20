@@ -44,6 +44,10 @@ export default function SlidesContainer() {
     }
   }, [series, films, slidesType, searchTerm]);
 
+  useEffect(() => {
+    setSlides(selectionFilter({ series, films })[slidesType]);
+  }, [slidesType, series, films]);
+
   return (
     <Group flexDirection="column">
       {slides &&

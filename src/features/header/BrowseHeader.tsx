@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, ReactNode } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { useFirebase } from "../../context/Firebase";
 import { useSlides } from "../../context/SlidesContext";
 import { ProfileType } from "../../pages/Browse";
@@ -22,13 +22,9 @@ import logo from "../../logo.svg";
 
 type BrowseHeaderPropsType = {
   user?: ProfileType;
-  children: ReactNode;
 };
 
-export default function BrowseHeader({
-  user,
-  children,
-}: BrowseHeaderPropsType) {
+export default function BrowseHeader({ user }: BrowseHeaderPropsType) {
   const [searchActive, setSearchActive] = useState<boolean>(false);
   const { slidesType, setSlidesType, searchTerm, setSearchTerm } = useSlides();
   const { firebase } = useFirebase();
@@ -100,7 +96,6 @@ export default function BrowseHeader({
         </Text>
         <PlayButton>Play</PlayButton>
       </Feature>
-      {children}
     </>
   );
 }

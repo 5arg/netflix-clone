@@ -32,9 +32,8 @@ export default function Header({
           <ButtonLink to={ROUTES.SIGN_IN}>Sign In</ButtonLink>
         </Container>
       )}
-      {location.pathname === ROUTES.BROWSE && (
-        <BrowseHeader user={user} children={children} />
-      )}
+      {location.pathname === ROUTES.BROWSE && <BrowseHeader user={user} />}
+      {children}
     </Background>
   ) : (
     <>
