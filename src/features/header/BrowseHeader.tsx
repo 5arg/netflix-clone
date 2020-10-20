@@ -29,15 +29,12 @@ export default function BrowseHeader({
   user,
   children,
 }: BrowseHeaderPropsType) {
-  const [search, setSearch] = useState<{
-    searchTerm: string;
-    active: boolean;
-  }>({ searchTerm: "", active: false });
-  const { slidesType, setSlidesType } = useSlides();
+  const [searchActive, setSearchActive] = useState<boolean>(false);
+  const { slidesType, setSlidesType, searchTerm, setSearchTerm } = useSlides();
   const { firebase } = useFirebase();
 
   const onSearchTermChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    setSearch((prevValue) => ({ ...prevValue, searchTerm: target.value }));
+    setSearchTerm(target.value);
   };
 
   return (
@@ -61,19 +58,12 @@ export default function BrowseHeader({
         {user && (
           <Group>
             <Search>
-              <SearchIcon
-                onClick={() =>
-                  setSearch((prevState) => ({
-                    ...prevState,
-                    active: !prevState.active,
-                  }))
-                }
-              >
+              <SearchIcon onClick={() => setSearchActive((old) => !old)}>
                 <img src="/images/icons/search.png" alt="Search" />
               </SearchIcon>
               <SearchInput
-                active={search.active}
-                value={search.searchTerm}
+                active={searchActive}
+                value={searchTerm || ""}
                 onChange={onSearchTermChange}
                 placeholder="Search films and series"
               />

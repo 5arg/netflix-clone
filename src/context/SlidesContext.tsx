@@ -5,6 +5,8 @@ type State = {
   setSlidesType: (slidesType: "series" | "films") => void;
   featuredSlide: any | null;
   setFeaturedSlide: (featuredSlide: any | null) => void;
+  searchTerm: string | null;
+  setSearchTerm: (searchTerm: string | null) => void;
 };
 
 const SlidesContext = createContext<State | undefined>(undefined);
@@ -19,6 +21,8 @@ const SlidesProvider = ({ children }: SlidesProviderTypeProps) => {
     setSlidesType,
     featuredSlide: null,
     setFeaturedSlide,
+    searchTerm: null,
+    setSearchTerm,
   });
 
   function setSlidesType(slidesType: "series" | "films") {
@@ -27,6 +31,10 @@ const SlidesProvider = ({ children }: SlidesProviderTypeProps) => {
 
   function setFeaturedSlide(featuredSlide: any | null) {
     setState((old) => ({ ...old, featuredSlide }));
+  }
+
+  function setSearchTerm(searchTerm: string | null) {
+    setState((old) => ({ ...old, searchTerm }));
   }
   return (
     <SlidesContext.Provider value={state}>{children}</SlidesContext.Provider>
