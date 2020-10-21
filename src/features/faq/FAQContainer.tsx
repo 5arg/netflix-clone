@@ -9,7 +9,7 @@ export default function FAQContainer() {
   return (
     <Container>
       <Inner>
-        <Title>Frequently Asked Question</Title>
+        <Title>Frequently Asked Questions</Title>
         {faqData.map((item, index) => (
           <FAQ
             key={index}
