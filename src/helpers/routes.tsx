@@ -1,50 +1,19 @@
 import React, { ReactNode } from "react";
 import { Route, Redirect } from "react-router-dom";
-import Firebase from "firebase";
 import * as ROUTES from "../constants/routes";
-
-type IsUserRedirectTypeProps = {
-  user: Firebase.User | undefined;
-  path: string;
-  loggedInPath: string;
-  children: ReactNode;
-};
-
-export function IsUserRedirect({
-  user,
-  path,
-  loggedInPath,
-  children,
-  ...rest
-}: IsUserRedirectTypeProps) {
-  return (
-    <Route
-      {...rest}
-      exact
-      path={path}
-      render={() => {
-        if (!user) {
-          return children;
-        } else {
-          return <Redirect exact to={{ pathname: loggedInPath }} />;
-        }
-      }}
-    />
-  );
-}
+import useAuthListener from "../hooks/useAuthListener";
 
 type ProtectedRoutePropsType = {
-  user: Firebase.User | undefined;
   path: string;
   children: ReactNode;
 };
 
 export function ProtectedRoute({
-  user,
   path,
   children,
   ...rest
 }: ProtectedRoutePropsType) {
+  const user = useAuthListener().user;
   return (
     <Route
       {...rest}
