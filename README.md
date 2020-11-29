@@ -1,4 +1,4 @@
-Netflix-clone is a project made by following [Karl Hadwen's tutorial](https://www.youtube.com/watch?v=x_EEwGe-a9o&t=22745s&ab_channel=KarlHadwen), but implementing my own component pattern than Compound Components pattern used in the tutorial.
+Netflix-clone is a project made by following [Karl Hadwen's tutorial](https://www.youtube.com/watch?v=x_EEwGe-a9o&t=22745s&ab_channel=KarlHadwen), but implementing my own component pattern rather than Compound Components pattern used in the tutorial.
 
 ## Motivation
 
@@ -13,4 +13,4 @@ Tutorial was used mainly to get a sense of how Styled Components work on a bigge
 
 ## Live demo
 
-[Live demo](https://agitated-shockley-1eba13.netlify.app/)
+[Live demo](https://www.youtube.com/watch?v=x_EEwGe-a9o&ab_channel=KarlHadwen)
