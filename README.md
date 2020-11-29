@@ -13,4 +13,4 @@ Tutorial was used mainly to get a sense of how Styled Components work on a bigge
 
 ## Live demo
 
-[Live demo](https://www.youtube.com/watch?v=x_EEwGe-a9o&ab_channel=KarlHadwen)
+[Live demo](https://agitated-shockley-1eba13.netlify.app/)
