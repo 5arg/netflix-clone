@@ -1,4 +1,4 @@
-Raining Buckets is a netflix clone project made by following [Karl Hadwen's tutorial](https://www.youtube.com/watch?v=x_EEwGe-a9o&t=22745s&ab_channel=KarlHadwen), but implementing my own component pattern than Compound Components pattern used in the tutorial.
+Netflix-clone is a project made by following [Karl Hadwen's tutorial](https://www.youtube.com/watch?v=x_EEwGe-a9o&t=22745s&ab_channel=KarlHadwen), but implementing my own component pattern than Compound Components pattern used in the tutorial.
 
 ## Motivation
 
